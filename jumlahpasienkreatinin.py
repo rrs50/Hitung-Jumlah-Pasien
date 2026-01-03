@@ -13,9 +13,11 @@ for file in excel_files:
 
 lt_all = pd.concat(df_list, ignore_index=True)
 
-
-jumlah_pasien_kreatinin = lt_all[
+jumlah_tes_kreatinin = lt_all[
     lt_all['Test Name'].str.contains('Kreatinin Darah')
 ].shape[0]
 
+jumlah_pasien_kreatinin = df_kreatinin['Medical Record No'].nunique()
+
 print("Jumlah pasien tes kreatinin:", jumlah_pasien_kreatinin)
+print("Jumlah tes kreatinin:", jumlah_tes_kreatinin)
